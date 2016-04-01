@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3df37897-de7d-4370-b70e-50fa9fa8602f" name="Default" comment="Added pics and contact information">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Funquotes.html" />
+    <list default="true" id="3df37897-de7d-4370-b70e-50fa9fa8602f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects.html" afterPath="$PROJECT_DIR$/Projects.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bio.html" afterPath="$PROJECT_DIR$/bio.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.html" afterPath="$PROJECT_DIR$/main.html" />
     </list>
     <ignored path="Resume.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -248,7 +244,7 @@
       <option name="presentableId" value="Default" />
       <updated>1459180061944</updated>
       <workItem from="1459180063336" duration="4948000" />
-      <workItem from="1459356367959" duration="13706000" />
+      <workItem from="1459356367959" duration="13839000" />
     </task>
     <task id="LOCAL-00001" summary="Added pics and contact information">
       <created>1459441323486</created>
@@ -257,11 +253,18 @@
       <option name="project" value="LOCAL" />
       <updated>1459441323486</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added project html, project img file, added a contact page.">
+      <created>1459529075131</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1459529075131</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18654000" />
+    <option name="totallyTimeSpent" value="18787000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-442" y="-2160" width="1920" height="1080" extended-state="0" />
@@ -294,7 +297,8 @@
       <path value="$USER_HOME$" />
     </ignored-roots>
     <MESSAGE value="Added pics and contact information" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added pics and contact information" />
+    <MESSAGE value="added project html, project img file, added a contact page." />
+    <option name="LAST_COMMIT_MESSAGE" value="added project html, project img file, added a contact page." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
