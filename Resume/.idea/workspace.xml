@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3df37897-de7d-4370-b70e-50fa9fa8602f" name="Default" comment="Added img1 file for quotes, made the img's link to fun facts">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Funquotes.html" afterPath="$PROJECT_DIR$/Funquotes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bio.html" afterPath="$PROJECT_DIR$/bio.html" />
-    </list>
+    <list default="true" id="3df37897-de7d-4370-b70e-50fa9fa8602f" name="Default" comment="" />
     <ignored path="Resume.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -315,7 +311,7 @@
       <option name="presentableId" value="Default" />
       <updated>1459180061944</updated>
       <workItem from="1459180063336" duration="4948000" />
-      <workItem from="1459356367959" duration="23084000" />
+      <workItem from="1459356367959" duration="23127000" />
     </task>
     <task id="LOCAL-00001" summary="Added pics and contact information">
       <created>1459441323486</created>
@@ -345,11 +341,18 @@
       <option name="project" value="LOCAL" />
       <updated>1459529126389</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added img1 file for quotes, made the img's link to fun facts">
+      <created>1459874539390</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1459874539390</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28032000" />
+    <option name="totallyTimeSpent" value="28075000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-421" y="-2118" width="1887" height="1016" extended-state="0" />
