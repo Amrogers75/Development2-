@@ -1,0 +1,103 @@
+<!DOCTYPE html5>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Player</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+</head>
+
+<body>
+<a id="menu-toggle" href="main.html" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+<nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+        <li class="sidebar-brand">
+            <a href="main.html"  onclick = $("#menu-close").click(); >Links to Anthony</a>
+        </li>
+        <li>
+            <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+        </li>
+        <li>
+            <a href="bio.html" onclick = $("#menu-close").click(); >About</a>
+        </li>
+        <li>
+            <a href="Funquotes.html" onclick = $("#menu-close").click(); >Quotes</a>
+        </li>
+        <li>
+            <a href="Projects.html" onclick = $("#menu-close").click(); >Portfolio</a>
+        </li>
+        <li>
+            <a href="Contactme.html" onclick = $("#menu-close").click(); >Contact</a>
+        </li>
+    </ul>
+</nav>
+
+<section id="video" class="video1">
+    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="media/canadian-idiot-video.webm"></iframe>
+    <br />
+    <small id="audio, align:center">
+        <a href="media/donald-trump.mp3"></a>
+    </small>
+    </iframe>
+</section>
+<!-- <object width="400" height="50" data="EMBEDDED OBJECT PLUG IN"></object> -->
+<!-- <audio controls>
+    <source src="" type="audio/ogg">
+    <source src="media/donald-trump.mp3" type="audio/mpeg">
+    <source src="" type="audio/wav">
+Your browser dose nor support the audio element.
+</audio> -->
+
+<!-- <div style="text-align:center">
+    <button onclick="playPause()">Play/Pause</button>
+    <button onclick="makeBig()">Big</button>
+    <button onclick="makeSmall()">Small</button>
+    <button onclick="makeNormal()">Normal</button>
+    <br><br>
+</div> -->
+
+<!--<video id="video1" width="655" height="455" controls>
+    <!-- <source src="media/canadian-idiot-video.mp4" type="video/mp4"> -->
+    <!-- <source src="media/canadian-idiot-video.oog" type="video/ogg"> -->
+    <!--<source src="media/canadian-idiot-video.webm" type="video/webm"> -->
+    <!-- Your browser does not support HTML5 video.
+</video> -->
+
+<!--
+<!-- single player button <script>
+    var vid = document.getElementById("myVideo");
+    function myFunction() {
+        alert(vid.audioTracks.length);
+    }
+</script>
+<p><a href="media/canadian-idiot-video.mp4" target="_blank"></a>.</p>
+
+<button onclick="myFunction()" type="button">Get the number of available audio tracks</button>
+<br><br> -->
+
+<script>
+    var myVideo = document.getElementById("video1");
+
+    function playPause() {
+        if (myVideo.paused)
+            myVideo.play();
+        else
+            myVideo.pause();
+    }
+
+    function makeBig() {
+        myVideo.width = 850;
+    }
+
+    function makeSmall() {
+        myVideo.width = 250;
+    }
+
+    function makeNormal() {
+        myVideo.width = 545;
+    }
+</script>
+
+</body>
+</html>
