@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3df37897-de7d-4370-b70e-50fa9fa8602f" name="Default" comment="added a canvas clock, added canvas css, up dated img. updated bio.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/Dot Net Vs JAVA   Funniest Video Ever Must Watch).webm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/canadian-idiot-video.webm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/country-roads.mp3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/donald-trump.mp3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/ghost-riders.mp3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thumbnail2/img3/eagle-oath.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thumbnail2/img3/eagle.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio-video.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canvas.html" afterPath="$PROJECT_DIR$/canvas.html" />
@@ -294,7 +301,7 @@
       <updated>1459180061944</updated>
       <workItem from="1459180063336" duration="4948000" />
       <workItem from="1459356367959" duration="60584000" />
-      <workItem from="1460731757813" duration="1713000" />
+      <workItem from="1460731757813" duration="1956000" />
     </task>
     <task id="LOCAL-00001" summary="Added pics and contact information">
       <created>1459441323486</created>
@@ -335,7 +342,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67245000" />
+    <option name="totallyTimeSpent" value="67488000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-416" y="-2119" width="1870" height="1020" extended-state="0" />
