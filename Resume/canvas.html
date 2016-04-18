@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <a href="main.html" class="btn btn-light">Return Home</a>
     <meta charset="UTF-8">
     <title>Clock</title>
     <link href="canvas.css" rel="stylesheet">
@@ -13,6 +13,7 @@
         <source src="media/country-roads.mp3" type="audio/mpeg">
         Your browser dose nor support the audio element.
     </audio>
+
 </head>
 
 <body style="background-color:#5cb85c">
@@ -22,7 +23,7 @@
         <i class="fa fa-circle fa-stack-2x"></i>
         <i class="fa fa-paperclip fa-stack-1x text-primary"></i>
         </span>
-    <a href="main.html" class="btn btn-light">Return Home</a>
+
 </div>
 
     <script>
@@ -106,7 +107,34 @@
         ctx.rotate(-pos);
         }
     </script>
+<h1>Just  a Question? How do you spend you'r Time?</h1><br>
+<form method="get">
+    <lable for="FirstName">Your First Name</lable><input id="firstname" name="YourFirstName"><br><br>
+    <lable for="LastName">Your Last Name</lable><input id="lastname" name="YourLastName"><br><br>
+    <lable for="gendermale">Are you a boy</lable><input type="radio" id="gendermale" name="gender"><br><br>
+    <lable for="genderfemale">Are you a girl</lable><input type="radio" id="genderfemale" name="gender"><br><br>
+    <lable for="email">Your email</lable><input id="email" name="Your email"><br><br>
+    <lable for="spam">I don't like spam</lable><input type="checkbox" id="spam" name="spam"><br><br>
+    <label>Past Time </label><select name="past times">
+    <option label="Fishing" value="1"></option>
+    <option label="Sleeping" value="2"></option>
+    <option label="Sports" value="3"></option>
+    <option label="Collecting" value="4"></option>
+    <option label="Foodie" value="5"></option>
+    <option label="Arts & Crafts" value="6"></option>
+    <option label="Movies" value="7"></option>
+    <option label="Reading" value="8"></option>
+    <option label="Shopping" value="9"></option>
+    <option label="Coding" value="10"></option>
+</select>
+    <input type="submit" value="submit">
+    <input type="reset" value="reset"><br><br><br>
 
+    <!--<lable for="Password">Your Password</lable><input id="pasword" name="Your password"><br><br>-->
+
+
+
+</form>
 
 </body>
 </html>

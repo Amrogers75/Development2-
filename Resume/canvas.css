@@ -6,3 +6,21 @@ canvas {
     display: block;
     width: 800px;
 }
+form{
+    text-align-all: center;
+    padding-left:  43%;
+    padding-right:  50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 800px;
+}
+h1{
+    text-align: center;
+    padding-left:  27%;
+    padding-right:  50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 800px;
+}
