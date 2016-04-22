@@ -1,5 +1,5 @@
 .container {
-    background: #402C3F;
+    background-image: url("bootstrap-player/media/redmoon.png");
     margin-bottom: 20px;
     padding-bottom: 50px;
     padding-left: 20px;
@@ -8,14 +8,19 @@
 h1, h4 , h2 {
     text-align: center;
     margin-bottom: 50px;
+    color: #8D2288;
 }
 h1 i {
-    color: #752C72;
+    color: #AB0EA4;
 }
 
-.col-lg-10 {
+.col-lg-8 {
     align-content: space-around;
     padding-left: 20px;
     padding-right: 50px;
 
+}
+.embed-responsive-item {
+    -webkit-filter: opacity(50%); /*Chrome, Safari, Opera */
+    filter: opacity(50%);
 }
