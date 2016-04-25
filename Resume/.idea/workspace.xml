@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3df37897-de7d-4370-b70e-50fa9fa8602f" name="Default" comment="added a canvas clock, added canvas css, up dated img. updated bio.">
+    <list default="true" id="3df37897-de7d-4370-b70e-50fa9fa8602f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Resume.iws" />
@@ -257,7 +257,7 @@
       <workItem from="1460731757813" duration="9565000" />
       <workItem from="1461082910767" duration="13153000" />
       <workItem from="1461342806556" duration="343000" />
-      <workItem from="1461388456960" duration="164000" />
+      <workItem from="1461388456960" duration="179000" />
     </task>
     <task id="LOCAL-00001" summary="Added pics and contact information">
       <created>1459441323486</created>
@@ -294,11 +294,18 @@
       <option name="project" value="LOCAL" />
       <updated>1459874539390</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added a canvas clock, added canvas css, up dated img. updated bio.">
+      <created>1461591073674</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1461591073674</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88757000" />
+    <option name="totallyTimeSpent" value="88772000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-424" y="-2119" width="1886" height="1015" extended-state="0" />
