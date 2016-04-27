@@ -1,2 +1,2 @@
 # Devlopment2-
-Resume is my porfolio that is beeing worked on and up dated
+Resume is my portfolio that is being worked on and up dated
