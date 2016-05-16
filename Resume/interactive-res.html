@@ -24,16 +24,18 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <canvas onmouseover="runcode()" id="canvas" width="100" height="100" class="btn btn-light btn-lg pull-center toggle" style="background-color: transparent;"></canvas>
 </head>
-<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+
+<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-fire" style="color:#FD9064"></i></a>
 <nav id="sidebar-wrapper">
     <ul class="sidebar-nav">
-        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-fire-extinguisher" style="color:#8D2242"></i></a>
         <li class="sidebar-brand">
             <a href="#top"  onclick = $("#menu-close").click(); >Links to Anthony</a>
         </li>
         <li>
-            <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+            <a href="main.html" onclick = $("#menu-close").click(); >Home</a>
         </li>
         <li>
             <a href="bio.html" onclick = $("#menu-close").click(); >About</a>
@@ -49,33 +51,32 @@
         </li>
     </ul>
 </nav>
-
-
-
 <body class="text-center" class="wrapper">
-<!--<section>
+
+<section>
     <div calss="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2><i class="fa fa-arrows fa-spin fa-1x fa-fw margin-bottom"></i> Anthony Rogers <i class="fa fa-arrows fa-spin fa-1x fa-fw margin-bottom"></i></h2>
+                <h5><i class="fa fa-arrows fa-spin fa-1x fa-fw margin-bottom"></i>Start your 30 sec. look <i class="fa fa-arrows fa-spin fa-1x fa-fw margin-bottom"></i></h5>
                 <span class="sr-only">Loading...</span>
 
-                <h4>amrogers75@gmail.com||801.709.4479||Lehi, UT</h4>
+                <h4></h4>
 
             </div>
         </div>
     </div>
-</section> -->
+</section>
     <!-- About Me -->
 <section>
     <div calss="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Who is Anthony Rogers</h2>
-                <h4>
-                    <p>Anthony is creative, out going, and enjoy a fast paced challenging work environment.</p>
-                    <p> Enjoy's working with others in a team, as well as leading and developing highly efficient teams.</p>
-                    <p>Anthony also enjoy's meeting others and educating groups about company products, services, policies, and procedures that will add them in every day life.</p>
+                <div id="dayoftheweek" style="color:#0AF6FB"></div>
+                <h1 style="color:#AC0DC1">Who is Anthony Rogers</h1>
+                <h4 style="color:#FDFEFF">
+                    <p>Anthony is out going, creative, and enjoy's a fast paced challenging work environment.</p>
+                    <p> Anthony can work with others in a team, as well as leading and developing highly efficient teams.</p>
+                    <p>Anthony also like's meeting others and educating groups about company products, services, policies, and procedures that will add them in every day life.</p>
                 </h4>
 
             </div>
@@ -87,8 +88,11 @@
     <div calss="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Anthony Has Skills</h2>
-                <h4>Python, Django, HTML 5, Web Development, Corporate training, High efficient team building, Employee training, Public Relations, Advertising/Marketing, Market research, Human resources, Management</h4>
+                <h1 style="color:#AC0DC1">Anthony Has Skills</h1>
+                <h4 style="color:#FDFEFF"><p><i class="fa fa-html5" aria-hidden="true" style="color:#FFFF00"></i> HTML 5, <i class="fa fa-css3" aria-hidden="true" style="color:#FFFF00"></i> css, <i class="fa fa-jsfiddle" aria-hidden="true" style="color:#FFFF00"></i> JS, <i class="fa fa-certificate" aria-hidden="true" style="color:#FFFF00"></i> Python, <i class="fa fa-bolt" aria-hidden="true" style="color:#FFFF00"></i> Django, <i class="fa fa-keyboard-o" aria-hidden="true" style="color:#FFFF00"></i> Web Development, <i class="fa fa-github-alt" aria-hidden="true" style="color:#FFFF00"></i> GitHub,</p>
+                    <p><i class="fa fa-briefcase" aria-hidden="true" style="color:#FFFF00"></i> Corporate training, <i class="fa fa-users" aria-hidden="true" style="color:#FFFF00"></i> High efficient team building, <i class="fa fa-university" aria-hidden="true" style="color:#FFFF00"></i> Employee training, <i class="fa fa-bus" aria-hidden="true" style="color:#FFFF00"></i> Public Relations,</p>
+                    <p><i class="fa fa-newspaper-o" aria-hidden="true" style="color:#FFFF00"></i> Advertising/Marketing, <i class="fa fa-line-chart" aria-hidden="true" style="color:#FFFF00"></i> Market research, <i class="fa fa-folder-open" aria-hidden="true" style="color:#FFFF00"></i> Human resources, <i class="fa fa-briefcase" aria-hidden="true" style="color:#FFFF00"></i> Management,</p>
+                </h4>
 
             </div>
         </div>
@@ -99,12 +103,12 @@
     <div calss="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Anthony Has Education </h2>
-                <h4>
-                    <p>M. A. T. C. - Lehi, UT - Front End Web Development Cert. 2016 to Current</p>
-                    <p>Coding Campus - Provo, UT - Python/Django Web Development Cert. 2015 to 2015</p>
-                    <p>Utah Valley University - Orem, UT - Bachelors of Science. 2011 to 2013</p>
-                    <p>Salt Lake Community College - Taylorsville, UT - Associates of Science. 2001 to 2004</p>
+                <h1 style="color:#AC0DC1">Anthony Has Education </h1>
+                <h4 style="color:#FDFEFF"><i class="fa fa-cog fa-spin fa-1x fa-fw margin-bottom" style="color:#FFFF00"></i>M. A. T. C. - Lehi, UT - Front End Web Development Cert. 2016 to Current</p>
+                    <span class="sr-only">Loading...</span>
+                    <p><i class="fa fa-graduation-cap" aria-hidden="true" style="color:#FFFF00"></i>Coding Campus - Provo, UT - Python/Django Web Development Cert. 2015 to 2015</p>
+                    <p><i class="fa fa-graduation-cap" aria-hidden="true" style="color:#FFFF00"></i>Utah Valley University - Orem, UT - Bachelors of Science. 2011 to 2013</p>
+                    <p><i class="fa fa-graduation-cap" aria-hidden="true" style="color:#FFFF00"></i>Salt Lake Community College - Taylorsville, UT - Associates of Science. 2001 to 2004</p>
                 </h4>
             </div>
         </div>
@@ -115,43 +119,48 @@
     <div calss="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Where Anthony has Been </h2>
+                <h1 style="color:#AC0DC1">Where Anthony has Been</h1>
                 <ul class="list-unstyled">
                     <li>
-                        <h4>Customer Care</h4>
-                        <strong>Vivint - Provo, UT 2016 to Current</strong><br>
-                        <strong>Responsibilities:</strong> Aid clients in account changes and billing, QA for the inbound call system.<br>
-                        <strong>Accomplishments:</strong> Operate on four teams. Customer care, New accounts, Outbound upgrade calls, and QA on inbound calls.<br>
-                        <strong>Skills Used:</strong> Communication, Problem solving, Priority software.
-                    </li>
-
-                    <li>
-                        <h4>Assistant Manager</h4>
-                        <strong>Firestone - Sandy, UT 2013 to 2015</strong><br>
-                        <strong>Responsibilities:</strong> Customer Relations, Business Management, Marketing, Employee Relations, Sales, Accounting, Time Management.<br>
-                        <strong>Skills Used:</strong> Leadership, Team Building, Client Relations, Public Relations, Stats, Market Research, Time Management, Problem Solving, Conflict Resolution/Management, Accounting, Book Keeping.
-                    </li>
-
-                    <li>
-                        <h4>Security Officer</h4>
-                        <strong>Outlets at Traverse Mountain - Lehi, UT 2012 to 2013</strong><br>
-                        <strong>Responsibilities:</strong> Site security, Public relations, Surveillance, Client safety, Incident management
-                        <strong>Skills Used:</strong> First responder, Site safety, Alarm response, Report writing, Attention to details, Writing Post orders, Team work, Interpersonal relations, Problem solving.
+                        <h3 style="color:#0AF6FB">Customer Care</h3>
+                        <h5 style="color:#FFFF00"><strong>Vivint - Provo, UT 2016 to Current</strong></h5>
+                        <h5 style="color:#FDFEFF"><strong style="color:#AC0DC1">Responsibilities:</strong> Aid clients in account changes and billing, QA for the inbound call system.</h5>
+                        <h5 style="color:#FDFEFF"><strong style="color:#AC0DC1">Skills Used:</strong> Communication, Problem solving, Priority software.</h5>
+                        <h5 style="color:#FDFEFF"><strong style="color:#AC0DC1">Accomplishments:</strong> Operate on four teams. Customer care, New accounts, Outbound upgrade calls, and QA on inbound calls.</h5>
 
                     </li>
 
                     <li>
-                    <h4>Tire & Lube, Service Manager</h4>
-                        <strong>Walmart - American Fork, UT 2009 to 2012</strong><br>
-                        <strong>Responsibilities:</strong> New higher trainer, Safety and Compliance to company and shop standers, Inventory, Interviewing possible Associates, Coaching of Associates.<br>
-                        <strong>Skills Used:</strong>  customer relations (PR), Marketing.<br>
-                        <strong>Accomplishments:</strong> With in three months the shop was brought up to become the district training facility. Accidents and claims dropped 15%. Sales increased by 20% from prior reports.
+                        <h3 style="color:#0AF6FB">Assistant Manager</h3>
+                        <h5 style="color:#FFFF00"><strong>Firestone - Sandy, UT 2013 to 2015</strong></h5>
+                        <h5 style="color:#FDFEFF"><strong style="color:#AC0DC1">Responsibilities:</strong> Customer Relations, Business Management, Marketing, Employee Relations, Sales, Accounting, Time Management.</h5>
+                        <h5 style="color:#FDFEFF"><strong style="color:#AC0DC1">Skills Used:</strong> Leadership, Team Building, Client Relations, Public Relations, Stats, Market Research, Time Management, Problem Solving, Conflict Resolution/Management, Accounting, Book Keeping.</h5>
                     </li>
 
                     <li>
-                        <h4>Owner/operator</h4>
-                        <strong>Alpha Auto Detail - Highland, UT 2005 to 2011</strong><br>
-                        <p>Increased the starting point of 600.00$ a week to over 5,000.00$ a week. Started with no debut, organized events, marketing campaigns, created advertisements, and Public Relation events. Controlled product, set budgets, created contract agreements, managed state and city licensing, and created return clients.</p>
+                        <h3 style="color:#0AF6FB">Security Officer</h3>
+                        <h5 style="color:#FFFF00"><strong>Outlets at Traverse Mountain - Lehi, UT 2012 to 2013</strong></h5>
+                        <h5 style="color:#FDFEFF"><strong style="color:#AC0DC1">Responsibilities:</strong> Site security, Public relations, Surveillance, Client safety, Incident management.</h5>
+                        <h5 style="color:#FDFEFF"><strong style="color:#AC0DC1">Skills Used:</strong> First responder, Site safety, Alarm response, Report writing, Attention to details, Writing Post orders, Team work, Interpersonal relations, Problem solving.</h5>
+
+                    </li>
+
+                    <li>
+                        <h3 style="color:#0AF6FB">Tire & Lube, Service Manager</h3>
+                        <h5 style="color:#FFFF00"><strong>Walmart - American Fork, UT 2009 to 2012</strong></h5>
+                        <h5 style="color:#FDFEFF"><strong style="color:#AC0DC1">Responsibilities:</strong> New higher trainer, Safety and Compliance to company and shop standers, Inventory, Interviewing possible Associates, Coaching of Associates.</h5>
+                        <h5 style="color:#FDFEFF"><strong style="color:#AC0DC1">Skills Used:</strong>  customer relations (PR), Marketing.</h5>
+                        <h5 style="color:#FDFEFF"><strong style="color:#AC0DC1">Accomplishments:</strong> With in three months the shop was brought up to become the district training facility. Accidents and claims dropped 15%. Sales increased by 20% from prior reports.</h5>
+                    </li>
+
+                    <li>
+                        <h3 style="color:#0AF6FB">Owner/operator</h3>
+                        <h5 style="color:#FFFF00"><strong>Alpha Auto Detail - Highland, UT 2005 to 2011</strong></h5>
+                        <h5 style="color:#FDFEFF">
+                            <p>Increased the starting point of 600.00$ a week to over 5,000.00$ a week. Started with no debut,</p>
+                            <p>organized events, marketing campaigns, created advertisements, and Public Relation events,</p>
+                            <p>Controlled product, set budgets, created contract agreements, managed state and city licensing, and created return clients.</p>
+                        </h5>
 
                     </li>
                 </ul>
@@ -160,30 +169,28 @@
     </div>
 </section>
  <!-- footer -->
-<footer onclick="runcode()">
+<footer>
     <div class="container">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 text-center">
-                <div id="dayoftheweek"></div>
-
-                <h4><strong>Anthony Rogers</strong></h4>
-
+                <h4 style="color:#FFFF00" onmouseover="pullimg()"><strong>Anthony Rogers</strong></h4>
+                <div id="imge"></div>
                 <ul class="list-unstyled">
-                    <li><i class="fa fa-home fa-1x fa-fw"></i>Lehi UT, 84043</li>
-                    <li><i class="fa fa-mobile fa-fw"></i> (801) 709.4479</li>
-                    <li><i class="fa fa-envelope fa-fw"></i>  <a href="Contactme.html">amrogers75@gmail.com</a>
+                    <li style="color:#FFFF00"><i class="fa fa-home fa-1x fa-fw"></i>Lehi UT, 84043</li>
+                    <li style="color:#FFFF00"><i class="fa fa-mobile fa-fw"></i> (801) 709.4479</li>
+                    <li><i class="fa fa-envelope fa-fw" style="color:#FFFF00"></i>  <a href="Contactme.html">amrogers75@gmail.com</a>
                     </li>
                 </ul>
                 <br>
                 <ul class="list-inline">
                     <li>
-                        <a href="https://www.linkedin.com/in/amr75"><i class="fa fa-linkedin fa-fw fa-3x"></i></a>
+                        <a href="https://www.linkedin.com/in/amr75"><i class="fa fa-linkedin fa-fw fa-3x"></i>linkedin</a>
                     </li>
                     <li>
-                        <a href="https://github.com/Amrogers75"><i class="fa fa-github-alt fa-fw fa-3x"></i></a>
+                        <a href="https://github.com/Amrogers75"><i class="fa fa-github-alt fa-fw fa-3x"></i>github</a>
                     </li>
                     <li>
-                        <a href="main.html"><i class="fa fa-rebel fa-fw fa-3x"></i></a>
+                        <a href="main.html"><i class="fa fa-rebel fa-fw fa-3x"></i>portfolio</a>
                     </li>
                 </ul>
                 <hr class="small">
@@ -192,14 +199,6 @@
         </div>
     </div>
 </footer>
-
-<script src="calendar.js"></script>
-
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
