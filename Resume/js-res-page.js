@@ -5,7 +5,7 @@
 //skills
 //Prior work experience
 //contact
-function pullimg() {
+function pulling() {
     document.getElementById("imge").innerHTML= "<img src='img/Anthony&Jaylin.png'>"
     
 }
