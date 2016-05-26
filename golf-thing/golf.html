@@ -3,16 +3,41 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="golf.html" rel="stylesheet">
+    <link href="golf.css" rel="stylesheet">
     <title>Golf Tracker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 </head>
 
 
-<body onload="work()">
+<body onload="buildcard()">
 
-<div id="scorecard">
+<div id="overlaycontainer">
+    <div id="contentdiv">
+        <div id="golfbanner">
+            <div class="blackbar">
+                <div class="barleft">
+                    <div id="golflogo"></div>
+                    <div id="logotext">Golf Score Card</div>
+                </div>
+                <div class="barright">
+                    <div id="countdown"></div>
+                </div>
+            </div>
+            <div id="golfcourselabel">Fox Hollow Golf</div>
+        </div>
+        <div id="scorecard">
 
+            <div id="leftcard"></div>
+            <div id="rightcard"></div>
+
+
+        </div>
+    </div>
 </div>
+
+<div id="container"></div>
+
+
 
 </body>
 <script src="golf.js"></script>
