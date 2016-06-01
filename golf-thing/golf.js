@@ -24,7 +24,7 @@ function buildcard(){
     buildholes();
 }
 
-function buildholes() {
+function buildholes(){
     // add 18 holes to the columns
     for(var p = 1; p <= numplayers; p++ ){
         for(var h = 1; h <= numholes; h++){
@@ -49,4 +49,43 @@ function clocktick(){
         seconds = 59;
     }
     document.getElementById("countdown").innerHTML = teetime + ":" + seconds;
+}
+
+/** var myVar = setInterval(stopTimer, 1000);
+
+function stopTimer() {
+    var d = new Date();
+    document.getElementById("stop").innerHTML = d.toLocaleTimeString();
+} */
+
+var testCourse ={};
+var colseCourses ={};
+var xhttp = new XMLHttpRequest();
+
+var local_obj = {latiude: 40.4426135, longitude: -111.8631116, radius: 100};
+
+function loadMe(){
+    $.post("http://golf-courses-api.herokuapp.com/courses",local_obj,function(data,status){
+        colseCourses = JSON.parse(data);
+        for (var p in closeCourese.courses){
+            var thisCourse = document.createElement("div");
+            thisCourse.setAttribute('id');
+            var mydisplaydiv = "<div id='" + closeCourese.courses[p].id +"' class='thisCourse' onclick='getCourseInfo(this.id)'>"+ closeCourese.courses[p].name+"</div>"
+            $("#slectCourse").append(mydisplydiv);
+        }
+        document.getElementById('golfDiv').style.display = 'block';
+    });
+};
+
+function getCourseInfo(id){
+    xhttp = new XMLHttpRequest;
+    xhttp.onreadystatechange = function(){
+        if (xhttp.readyState == 4 && xhttp.status == 200){
+            testCourse = JSON.parse(xhttp.responseText);
+            console.log(testCourse.course.name);
+            $("#golfcourselabel").html(testCourse.name);
+        }
+    };
+    xhttp.open("http://golf-courses-api.herokuapp.com/courses/" + id,true);
+    xhttp.send();
 }
