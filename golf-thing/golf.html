@@ -10,10 +10,13 @@
 
 
 <body onload="loadMe()">
-<p onclick="buildcard()"></p>
+
 <div id="overlaycontainer">
-    <div id="mydisplay">Course shows here</div>
     <div id="contentdiv">
+        <p onclick="buildcard()"></p>
+        <p id="golfDiv"></p>
+        <select id="selectCourse" onchange="getCourseInfo(this.value)"></select>
+        <select id="selectTeebox" onchange="setCourseInfo(this.value)"></select>
         <div id="golfbanner">
             <div class="blackbar">
                 <div class="barleft">

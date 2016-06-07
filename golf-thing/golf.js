@@ -6,54 +6,70 @@ var seconds = 59;
 var testCourse ={};
 var colseCourses ={};
 var xhttp = new XMLHttpRequest();
-var local_obj = {latiude: 40.4426135, longitude: -111.8631116, radius: 30};
+var local_obj = {latitude: 40.4426135, longitude: -111.8631116, radius: 30};
 
 // API call for courses
 
 function loadMe(){
-    $.post("http://golf-courses-api.herokuapp.com/courses",local_obj,function(data,status){
+    $.post("http://golf-courses-api.herokuapp.com/courses",local_obj,function(data, status){
         colseCourses = JSON.parse(data);
-        console.log(data);
-        for (var p in closeCourese.courses){
+        for (var p in colseCourses.courses){
             var thisCourse = document.createElement("div");
-            thisCourse.setAttribute('id');
-            var mydisplay = "<div id='" + closeCourese.courses[p].id +"' class='thisCourse' onclick='getCourseInfo(this.id)'>"+ closeCourese.courses[p].name+"</div>";
-            $("#slectCourse").append(mydisplydiv);
+            //thisCourse.setAttribute('id');
+            var mydisplay = "<option value='" + colseCourses.courses[p].id +"' class='thisCourse' >"+ colseCourses.courses[p].name+"</option>";
+            console.log(mydisplay);
+            $("#selectCourse").append(mydisplay);
         }
-        document.getElementById('golfDiv').style.display = 'block';
+        document.getElementById('golfDiv').style.display = "block";
     });
 }
 
 function getCourseInfo(id){
+    console.log(id);
     xhttp = new XMLHttpRequest;
     xhttp.onreadystatechange = function(){
         if (xhttp.readyState == 4 && xhttp.status == 200){
             testCourse = JSON.parse(xhttp.responseText);
             console.log(testCourse.course.name);
             $("#golfcourselabel").html(testCourse.name);
+
+            for(var t = 0; t < testCourse.course.holes[0].tee_boxes.length-1; t++){
+                var boxdisplay = "<option value ='" + t + "'>"+ testCourse.course.holes[0].tee_boxes[t].tee_color_type+"</option>";
+                $("#selectTeebox").append(boxdisplay);
+            }
         }
     };
-    xhttp.open("http://golf-courses-api.herokuapp.com/courses/" + id,true);
+
+    xhttp.open("GET","https://golf-courses-api.herokuapp.com/courses/" + id, true);
     xhttp.send();
 }
 
+function setCourseInfo(teeboxid){
+    buildcard(teeboxid);
+
+}
 // score card build
-function buildcard(){
+function buildcard(setCourseInfo){
+    //console.log(setCourseInfo);
     beginTimer();
     var holecollection = "";
     var playercollection = "";
+    var grandtotalcollection = "";
 
     // create column of player labels
     for(var pl = 1; pl <= numplayers; pl++ ){
         playercollection += "<div id='player" + pl +"' class='holebox playerbox'> Player " + pl + "</div>";
+        grandtotalcollection += "<div id='grand" + pl +"' class='holebox' >g</div>";
     }
 
     // create golf hole columns before you add holes to them.
-    for(var c = numholes; c >= 1; c-- ){
-        holecollection += "<div id='column" + c +"' class='holecol'><div class='holenumbertitle'>" + c + "</div></div>";
+    for(var c = numholes; c >= 0; c-- ){
+        var adjusthole = c - 1;
+        holecollection += "<div id='column" + c +"' class='holecol'><div class='holenumbertitle'>" + (c + 1) + "<span>par"  + testCourse.course.holes[0].tee_boxes[setCourseInfo].par + "</span></div></div>";
     }
+
     $("#leftcard").html(playercollection);
-    $("#rightcard").html(holecollection);
+    $("#rightcard").html( ("<div class='holecol'><div>total</div>" + grandtotalcollection +  "</div>") + holecollection );
 
     // call the function that builds the holes into the columns
     buildholes();
@@ -63,11 +79,21 @@ function buildholes(){
     // add 18 holes to the columns
     for(var p = 1; p <= numplayers; p++ ){
         for(var h = 1; h <= numholes; h++){
-            $("#column" + h).append("<div id='player" + p +"hole" + h +"' class='holebox'>s</div>");
+            $("#column" + h).append("<input onkeyup='calculatescore'(" + p +") id='player" + p + "hole" + h +"' class='holebox'/>bite</input>");
         }
     }
 }
 
+function calculatescore(theplayer){
+    var theTotal = 0;
+    for(var t = 1; t <= numholes; t++){
+        theTotal += Number($("#player" + theplayer + "hole" + t).val());
+    }
+    $("#grand" + theplayer).html(theTotal);
+}
+
+
+// Time to tee time
 function beginTimer(){
     var thetimer = setInterval(function(){clocktick()}, 1000);
 }
