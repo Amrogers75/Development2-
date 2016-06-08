@@ -17,7 +17,7 @@ function loadMe(){
             var thisCourse = document.createElement("div");
             //thisCourse.setAttribute('id');
             var mydisplay = "<option value='" + colseCourses.courses[p].id +"' class='thisCourse' >"+ colseCourses.courses[p].name+"</option>";
-            console.log(mydisplay);
+            //console.log(mydisplay);
             $("#selectCourse").append(mydisplay);
         }
         document.getElementById('golfDiv').style.display = "block";
@@ -34,8 +34,8 @@ function getCourseInfo(id){
             $("#golfcourselabel").html(testCourse.name);
 
             for(var t = 0; t < testCourse.course.holes[0].tee_boxes.length-1; t++){
-                var boxdisplay = "<option value ='" + t + "'>"+ testCourse.course.holes[0].tee_boxes[t].tee_color_type+"</option>";
-                $("#selectTeebox").append(boxdisplay);
+                var boxDisplay = "<option value ='" + t + "'>"+ testCourse.course.holes[0].tee_boxes[t].tee_type+"</option>";
+                $("#selectTeebox").append(boxDisplay);
             }
         }
     };
@@ -49,7 +49,7 @@ function setCourseInfo(teeboxid){
 
 }
 // score card build
-function buildcard(setCourseInfo){
+function buildcard(fred){
     //console.log(setCourseInfo);
     beginTimer();
     var holecollection = "";
@@ -59,14 +59,21 @@ function buildcard(setCourseInfo){
     // create column of player labels
     for(var pl = 1; pl <= numplayers; pl++ ){
         playercollection += "<div id='player" + pl +"' class='holebox playerbox'> Player " + pl + "</div>";
-        grandtotalcollection += "<div id='grand" + pl +"' class='holebox' >g</div>";
+        grandtotalcollection += "<div id='grand" + pl +"' class='holebox' ></div>";
     }
 
     // create golf hole columns before you add holes to them.
-    for(var c = numholes; c >= 0; c-- ){
-        var adjusthole = c - 1;
-        holecollection += "<div id='column" + c +"' class='holecol'><div class='holenumbertitle'>" + (c + 1) + "<span>par"  + testCourse.course.holes[0].tee_boxes[setCourseInfo].par + "</span></div></div>";
+    for(var num = 18; num >= 1; num-- ){
+        var adjusthole = num - 1;
+        holecollection += "<div id='column" + num +"' class='holecol'><div class='holenumbertitle'>" + num + "<span> par" + testCourse.course.holes[adjusthole].tee_boxes[fred].par +"</span></div></div>";
+
     }
+
+    /**for(var num = 8; num >= 0; num-- ){
+        var adjusthole = num - 1;
+        holecollection += "<div id='column" + num +"' class='holecol'><div class='holenumbertitle'>" + (num + 1) + "<span> par" + testCourse.course.holes[adjusthole].pin_location[0].par +"</span></div></div>";
+
+    }*/
 
     $("#leftcard").html(playercollection);
     $("#rightcard").html( ("<div class='holecol'><div>total</div>" + grandtotalcollection +  "</div>") + holecollection );
@@ -79,7 +86,7 @@ function buildholes(){
     // add 18 holes to the columns
     for(var p = 1; p <= numplayers; p++ ){
         for(var h = 1; h <= numholes; h++){
-            $("#column" + h).append("<input onkeyup='calculatescore'(" + p +") id='player" + p + "hole" + h +"' class='holebox'/>bite</input>");
+            $("#column" + h).append("<input onkeyup='calculatescore'(" + p +") id='player" + p + "hole" + h +"' class='holebox'/></input>");
         }
     }
 }
