@@ -91,6 +91,7 @@ function buildholes(){
     }
 }
 
+
 function calculatescore(theplayer){
     var theTotal = 0;
     for(var t = 1; t <= numholes; t++){

@@ -130,10 +130,12 @@ body,html{
     border-bottom: 1px solid #CCC;
     height: 20px;
     padding-top: 5px;
+    width: 78%;
 }
 #playercolumn{
     margin-top: 20px;
     border: none;
+    width: 80%;
 }
 
 .playerbox{
@@ -150,7 +152,7 @@ body,html{
 
 @media screen and (max-width: 1105px) {
     #leftcard{
-        width: 9.5%;
+        width: 8.5%;
     }
     .holecol{
         width: 4.7%;
