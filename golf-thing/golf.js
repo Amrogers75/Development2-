@@ -1,7 +1,7 @@
 var numplayers = 8;
 var numholes = 18;
 var teetime = 45;
-var seconds = 59;
+var Prodigy = 59;
 
 var testCourse ={};
 var colseCourses ={};
@@ -63,17 +63,22 @@ function buildcard(fred){
     }
 
     // create golf hole columns before you add holes to them.
+
+    // Required: Allow users to select which tee they will be using (Men's, Women's, Pro, Amateur, etc.) When they change their selection, the       yardage should update to reflect the selection.
+
+    // Required: Create a row that loads handicaps for each hole from the course data and displays it in the table.
+
+    // Required: Create a row that loads yardage for each hole from the course data and displays it in the table. Include the total.
+
     for(var num = 18; num >= 1; num-- ){
         var adjusthole = num - 1;
         holecollection += "<div id='column" + num +"' class='holecol'><div class='holenumbertitle'>" + num + "<span> par" + testCourse.course.holes[adjusthole].tee_boxes[fred].par +"</span></div></div>";
 
+            /** "<div> yards' + testCourse.course.yards [].yards +'"
+             *
+            "<div> H' + testCourse.course.hcp [].hcp +'"</div>"</div>" */
+
     }
-
-    /**for(var num = 8; num >= 0; num-- ){
-        var adjusthole = num - 1;
-        holecollection += "<div id='column" + num +"' class='holecol'><div class='holenumbertitle'>" + (num + 1) + "<span> par" + testCourse.course.holes[adjusthole].pin_location[0].par +"</span></div></div>";
-
-    }*/
 
     $("#leftcard").html(playercollection);
     $("#rightcard").html( ("<div class='holecol'><div>total</div>" + grandtotalcollection +  "</div>") + holecollection );
@@ -97,6 +102,7 @@ function calculatescore(theplayer){
     for(var t = 1; t <= numholes; t++){
         theTotal += Number($("#player" + theplayer + "hole" + t).val());
     }
+    
     $("#grand" + theplayer).html(theTotal);
 }
 
@@ -120,10 +126,31 @@ function clocktick(){
     document.getElementById("countdown").innerHTML = teetime + ":" + seconds;
 }
 
-/** var myVar = setInterval(stopTimer, 1000);
+// Required: Once a user has entered their last hole's score, give them a message that shows them their total score relative to par (+5, -10, etc) and a few words describing their score (i.e., positive score: "Better luck next time", negative score: "On to the PGA!")
 
-function stopTimer() {
-    var d = new Date();
-    document.getElementById("stop").innerHTML = d.toLocaleTimeString();
-} */
+function getMessage(){
 
+    var totalScore  = 68;
+    var par = 72;
+
+    if (totalScore < par){
+        $('#message').append('<div class="alert alert-success" role="alert">Gold Jacket</div>')
+    }
+
+    else if(totalScore == par){
+        $('#message').append('<div class="alert alert-info" role="alert">Green Jacket</div>')
+    }
+
+    else if (totalScore > par && totalScore < par + 10){
+        $('#message').append('<div class="alert alert-warning" role="alert">Where Were you On that ONE?</div>')
+    }
+
+    else {
+        $('#message').append('<div class="alert alert-danger" role="alert">Next Time Just Tap it In</div>')
+    }
+
+}
+
+//  Advanced: Display a map of the course. Allow the golfer to click on any hole and display the hole in the map. Drop two pins on the map marking the tee off area and the green.
+
+//  Advanced: Allow the golfer to select any golf course that is within 30 miles from his/her location. The score card will show the new golf course information (par, yardage, etc.)
