@@ -1,12 +1,14 @@
 var numplayers = 8;
 var numholes = 18;
 var teetime = 45;
-var Prodigy = 59;
+var seconds = 59;
 
 var testCourse ={};
 var colseCourses ={};
 var xhttp = new XMLHttpRequest();
 var local_obj = {latitude: 40.4426135, longitude: -111.8631116, radius: 30};
+
+//  Advanced: Allow the golfer to select any golf course that is within 30 miles from his/her location. The score card will show the new golf course information (par, yardage, etc.)
 
 // API call for courses
 
@@ -15,9 +17,9 @@ function loadMe(){
         colseCourses = JSON.parse(data);
         for (var p in colseCourses.courses){
             var thisCourse = document.createElement("div");
-            //thisCourse.setAttribute('id');
+
             var mydisplay = "<option value='" + colseCourses.courses[p].id +"' class='thisCourse' >"+ colseCourses.courses[p].name+"</option>";
-            //console.log(mydisplay);
+
             $("#selectCourse").append(mydisplay);
         }
         document.getElementById('golfDiv').style.display = "block";
@@ -50,7 +52,6 @@ function setCourseInfo(teeboxid){
 }
 // score card build
 function buildcard(fred){
-    //console.log(setCourseInfo);
     beginTimer();
     var holecollection = "";
     var playercollection = "";
@@ -72,11 +73,7 @@ function buildcard(fred){
 
     for(var num = 18; num >= 1; num-- ){
         var adjusthole = num - 1;
-        holecollection += "<div id='column" + num +"' class='holecol'><div class='holenumbertitle'>" + num + "<span> par" + testCourse.course.holes[adjusthole].tee_boxes[fred].par +"</span></div></div>";
-
-            /** "<div> yards' + testCourse.course.yards [].yards +'"
-             *
-            "<div> H' + testCourse.course.hcp [].hcp +'"</div>"</div>" */
+        holecollection += "<div id='column" + num +"' class='holecol'><div class='holenumbertitle'>" + num + "<div> par" + testCourse.course.holes[adjusthole].tee_boxes[fred].par +"</div> " + "<div> yd" + testCourse.course.holes[adjusthole].tee_boxes[fred].yards +" " +" <div> HC" + testCourse.course.holes[adjusthole].tee_boxes[fred].hcp +"</div></div></div></div>";
 
     }
 
@@ -91,7 +88,7 @@ function buildholes(){
     // add 18 holes to the columns
     for(var p = 1; p <= numplayers; p++ ){
         for(var h = 1; h <= numholes; h++){
-            $("#column" + h).append("<input onkeyup='calculatescore'(" + p +") id='player" + p + "hole" + h +"' class='holebox'/></input>");
+            $("#column" + h).append("<input onkeyup='calculatescore (" + p +")' id='player" + p + "hole" + h +"' class='holebox'/></input>");
         }
     }
 }
@@ -102,7 +99,7 @@ function calculatescore(theplayer){
     for(var t = 1; t <= numholes; t++){
         theTotal += Number($("#player" + theplayer + "hole" + t).val());
     }
-    
+
     $("#grand" + theplayer).html(theTotal);
 }
 
@@ -130,27 +127,25 @@ function clocktick(){
 
 function getMessage(){
 
-    var totalScore  = 68;
-    var par = 72;
+    var totalScore  = {};
+    var par = {};
 
     if (totalScore < par){
-        $('#message').append('<div class="alert alert-success" role="alert">Gold Jacket</div>')
+        $('#message').append('<div class="alert alert-success" role="alert">Gold Jacket Player</div>')
     }
 
     else if(totalScore == par){
-        $('#message').append('<div class="alert alert-info" role="alert">Green Jacket</div>')
+        $('#message').append('<div class="alert alert-info" role="alert">Green Jacket Player</div>')
     }
 
     else if (totalScore > par && totalScore < par + 10){
-        $('#message').append('<div class="alert alert-warning" role="alert">Where Were you On that ONE?</div>')
+        $('#message').append('<div class="alert alert-warning" role="alert">Next Time Just Tap it In!!</div>')
     }
 
     else {
-        $('#message').append('<div class="alert alert-danger" role="alert">Next Time Just Tap it In</div>')
+        $('#message').append('<div class="alert alert-danger" role="alert">Where Were you On that ONE?</div>')
     }
 
 }
 
 //  Advanced: Display a map of the course. Allow the golfer to click on any hole and display the hole in the map. Drop two pins on the map marking the tee off area and the green.
-
-//  Advanced: Allow the golfer to select any golf course that is within 30 miles from his/her location. The score card will show the new golf course information (par, yardage, etc.)
