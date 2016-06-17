@@ -8,6 +8,7 @@ var fish;
 var corals;
 var currentState;
 var renderingContext;
+var frames =0;
 
 var states = {
     splash: 0,
@@ -23,7 +24,7 @@ var height;
 var okButton;
 
 var forgroundPosition = 0;
-var frames =0;
+
 
 
 
@@ -38,11 +39,6 @@ function main() {
     //corals = new CoralCollection();
 
     loadGraphics();
-}
-
-function Fish() {
-    this.x = 140;
-    this.y = 0;
 }
 
 function windowSetup() {
@@ -85,9 +81,9 @@ function loadGraphics() {
         initSprites(this);
         renderingContext.fillStyle = backgroundSprite.color;
         renderingContext.fillRect(0, 0, width, height);
-        backgroundSprite.draw(renderingContext, 0, height - backgroundSprite.height);
-        backgroundSprite.draw(renderingContext, backgroundSprite.width, height - backgroundSprite.height);
-        fishSprite[0].draw(renderingContext, 5, 5, 142, 50);
+        //backgroundSprite.draw(renderingContext, 0, height - backgroundSprite.height);
+        //backgroundSprite.draw(renderingContext, backgroundSprite.width, height - backgroundSprite.height);
+        //fishSprite[0].draw(renderingContext, 5, 5, 142, 50);
 
         /**okButton = {
             x: (width - okButtonSprite.width)/ 2,
@@ -95,23 +91,104 @@ function loadGraphics() {
             y: height - 200,
             width: okButtonSprite.width,
             height: okButtonSprite.height
-        };
-        gameLoop();*/
+        };*/
+         gameLoop();
     };
-
 }
 
-/**function gameLoop(){
+function gameLoop(){
     update();
     render();
     window.requestAnimationFrame(gameLoop);
-}*/
+}
 
-
-/**function update() {
+function update() {
     frames++;
-    if(currentState);
-};*/
+
+    /**if (currentState !== states.Score) {
+        foregroundPosition = (foregroundPosition - 2) % 14; // Move left two px each frame. Wrap every 14px.
+    }
+
+    if (currentState === states.Game) {
+        corals.update();
+    }*/
+
+    fish.update();
+
+}
+
+// Draw anything additional ie trees, boats, ect...
+function render() {
+    // Draw background color
+    renderingContext.fillRect(0, 0, width, height);
+
+    // Draw background sprites
+    backgroundSprite.draw(renderingContext, 0, height - backgroundSprite.height);
+    backgroundSprite.draw(renderingContext, backgroundSprite.width, height - backgroundSprite.height);
+
+    // corals.draw(renderingContext);
+    fish.draw(renderingContext);
+
+    /**if (currentState === states.Score) {
+        okButtonSprite.draw(renderingContext, okButton.x, okButton.y);
+    }*/
+
+    // Draw foreground sprites
+    /**foregroundSprite.draw(renderingContext, foregroundPosition, height - foregroundSprite.height);
+    foregroundSprite.draw(renderingContext, foregroundPosition + foregroundSprite.width, height - foregroundSprite.height);*/
+}
+
+function Fish() {
+        this.x = 140;
+        this.y = 95;
+
+        this.frame = 0;
+        this.velocity = 0;
+        this.animation = [2, 1, 2, 1]; // The animation sequence
+
+        this.rotation = 0;
+        this.radius = 12;
+
+        this.gravity = 0.25;
+        this._jump = 4.6;
+
+        this.jump = function () {
+        this.velocity = -this._jump;
+    };
+
+// runs animation twice as fast during game
+    this.update = function () {
+
+        var n = currentState === states.Splash ? 10 : 5;
+
+        this.frame += frames % n === 0 ? 1 : 0;
+        this.frame %= this.animation.length;
+
+        if (currentState === states.Splash) {
+            //this.updateIdleFish();
+        } else { // Game state
+            //this.updatePlayingFish();
+        }
+    };
+
+    this.updateIdleFish = function () {
+        this.y = height - 280 + 5 * Math.cos(frames / 10);
+        this.rotation = 0;
+    };
+
+    this.draw = function (renderingContext) {
+        renderingContext.save();
+
+        renderingContext.translate(this.x, this.y);
+        renderingContext.rotate(this.rotation);
+
+        var n = this.animation[this.frame];
+
+        fishSprite[n].draw(renderingContext, -fishSprite[n].width / 2, -fishSprite[n].height / 2);
+
+        renderingContext.restore();
+    };
+}
 
 
 //Required: Project has a listener for click events.
