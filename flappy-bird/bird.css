@@ -1,7 +1,7 @@
 body{
     width: 100%;
     height: auto;
-    background: url('img/jolly-roger.jpeg');
+    background: url('img/beach1.jpg');
     position: fixed;
     top: 0;
     right: 0;
@@ -28,4 +28,4 @@ canvas {
 #titlesign{ width: 350px; height: 276px; background-image: url(img/explicit-warning.png); position: relative; left: -50%; top: 25px;}
 #container{position: absolute; left: 50%; z-index: 999;}
 #container2{position: absolute; left: 50%;}
-#backgrondwaves{ width: 813px; height: 468px; background-image:url(img/); position: relative; left: -49%; top: 250px;}
+#backgrondwaves{ width: 813px; height: 468px; background-image:url(img/jolly-roger2.jpeg); position: relative; left: -49%; top: 250px;}
