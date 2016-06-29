@@ -8,13 +8,21 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
 
-    <title>Keep to the Code</title>
+    <title>Swim Sharkie Swim</title>
 
     <link href="bird.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="bird.js"></script>
+    <script src="sprite-bird.js"></script>
 
 </head>
 
-<body onload="main()">
+<body onload="main(); cscore();">
+
+<audio autoplay>
+    <source src="img/Jaws-Theme-Song.mp3" type="audio/mpeg">
+    Your browser dose not support the audio element.
+</audio>
 
 <div id="container">
     <div id="titlesign">
@@ -26,6 +34,10 @@
     </div>
 </div>
 
+<div id="container3">
+    <div id="score"></div>
+    <div id="hscore"></div>
+</div>
 <noscript>
     <p>For full functionality of this page it is necessary to enable JavaScript.
         Here are the <a href="http://www.enable-javascript.com/" target="_blank">
@@ -33,6 +45,6 @@
 </noscript>
 
 </body>
-<script src="bird.js"></script>
-<script src="sprite-bird.js"></script>
+
+
 </html>

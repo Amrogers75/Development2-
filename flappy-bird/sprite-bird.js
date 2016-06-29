@@ -25,7 +25,7 @@ function initSprites(img) {
     ];
 
     backgroundSprite = new Sprite(img, 0, 0, 138, 114);
-    backgroundSprite.color = "#50c878"; // save background color
+    backgroundSprite.color = "#1A99D9"; // save background color
     
     foregroundSprite = new Sprite(img, 138, 0, 112, 56);
 

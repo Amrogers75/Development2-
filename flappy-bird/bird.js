@@ -9,10 +9,11 @@ var corals;
 var currentState;
 var renderingContext;
 var frames =0;
-
+var score = 0;
+var hscore = 0;
 var states = {
     splash: 0,
-    Game: 0,
+    Game: 1,
     Score: 2
 };
 
@@ -33,7 +34,7 @@ function main() {
     canvasSetup();
 
     currentState = states.Splash;
-    document.body.appendChild(canvas);
+    document.getElementById("container3").appendChild(canvas);
 
     fish = new Fish();
     corals = new CoralCollection();
@@ -49,7 +50,8 @@ function windowSetup() {
     if(width >= 500){
         width=380;
         height=450;
-        inputEvent = "keyup";
+        inputEvent = "mousedown";
+        //inputEvent = "keyup";
 
         document.addEventListener(inputEvent, onpress);
     }
@@ -68,16 +70,19 @@ function canvasSetup() {
 function onpress(evt) {
     switch (currentState) {
 
-        case states.Splash: // Start the game and update the fish velocity.
+// Start the game and update the fish velocity.
+        case states.Splash:
             currentState = states.Game;
             fish.jump();
             break;
 
-        case states.Game: // The game is in progress. Update fish velocity.
+// The game is in progress. Update fish velocity.
+        case states.Game:
             fish.jump();
             break;
 
-        case states.Score: // Change from score to splash state if event within okButton bounding box
+// Change from score to splash state if event within okButton bounding box
+        case states.Score:
             // Get event position
             var mouseX = evt.offsetX, mouseY = evt.offsetY;
 
@@ -89,8 +94,9 @@ function onpress(evt) {
             // Check if within the okButton
             if (okButton.x < mouseX && mouseX < okButton.x + okButton.width &&
                 okButton.y < mouseY && mouseY < okButton.y + okButton.height
-            ) {
-                //console.log('click');
+            )
+//console.log('click');
+            {
                 corals.reset();
                 currentState = states.Splash;
                 score = 0;
@@ -131,6 +137,8 @@ function gameLoop(){
 }
 
 function update() {
+    document.getElementById("score").innerHTML = "score: " + score;
+    document.getElementById("hscore").innerHTML = "high score: " + hscore;
     frames++;
 
     if (currentState !== states.Score) {
@@ -147,6 +155,7 @@ function update() {
 
 // Draw anything additional ie trees, boats, ect...
 function render() {
+
     // Draw background color
     renderingContext.fillRect(0, 0, width, height);
 
@@ -170,9 +179,10 @@ function Fish() {
         this.x = 140;
         this.y = 0;
 
+// The animation sequence
         this.frame = 0;
         this.velocity = 0;
-        this.animation = [0, 1, 2, 1]; // The animation sequence
+        this.animation = [0, 1, 2, 1];
 
         this.rotation = 0;
         this.radius = 12;
@@ -217,7 +227,8 @@ function Fish() {
                 currentState = states.Score;
             }
 
-            this.velocity = this._jump; // Set velocity to jump speed for correct rotation
+// Set velocity to jump speed for correct rotation
+            this.velocity = this._jump;
         }
 
         // If our player hits the top of the canvas, we crash him
@@ -257,24 +268,24 @@ function Coral() {
     this.width = bottomCoralSprite.width;
     this.height = bottomCoralSprite.height;
 
-    /**
-     * Determines if the fish has collided with the Coral.
-     * Calculates x/y difference and use normal vector length calculation to determine
-     */
-
+    // Determines if the fish has collided with the Coral. Calculates x/y difference and use normal vector length       calculation to determine
     this.detectCollision = function () {
+
         // intersection
         var cx = Math.min(Math.max(fish.x, this.x), this.x + this.width);
         var cy1 = Math.min(Math.max(fish.y, this.y), this.y + this.height);
         var cy2 = Math.min(Math.max(fish.y, this.y + this.height + 110), this.y + 2 * this.height + 80);
+
         // Closest difference
         var dx = fish.x - cx;
         var dy1 = fish.y - cy1;
         var dy2 = fish.y - cy2;
+
         // Vector length
         var d1 = dx * dx + dy1 * dy1;
         var d2 = dx * dx + dy2 * dy2;
         var r = fish.radius * fish.radius;
+
         // Determine intersection
         if (r > d1 || r > d2) {
             currentState = states.Score;
@@ -305,7 +316,9 @@ function CoralCollection() {
 
     //Update the position of existing corals and add new corals when necessary.
     this.update = function () {
-        if (frames % 100 === 0) { // Add a new coral to the game every 100 frames.
+
+        // Add a new coral to the game every 100 frames.
+        if (frames % 100 === 0) {
             this.add();
         }
 
@@ -316,21 +329,31 @@ function CoralCollection() {
 
 // If this is the leftmost coral, it is the only coral that the fish can collide with . . .
             if (i === 0) {
-                coral.detectCollision(); // . . . so, determine if the fish has collided with this leftmost coral.
+                coral.detectCollision();
+                // . . . so, determine if the fish has collided with this leftmost coral.
             }
 
 // Each frame, move each coral two pixels to the left. Higher/lower values change the movement speed.
             coral.x -= 2;
-            if (coral.x < -coral.width) { // If the coral has moved off screen . . .
-                this._corals.splice(i, 1); // . . . remove it.
+            if (coral.x < -coral.width) {
+                // If the coral has moved off screen . . .
+                this._corals.splice(i, 1);
+               // score++;
+                // . . . remove it.
                 i--;
                 len--;
+            }
+            if (coral.x == 140){
+                score++;
+                if(score > hscore){
+                    hscore = score;
+                    localStorage.setItem("highScore", hscore);
+                }
             }
         }
     };
 
     // Draw all corals to canvas context.
-
     this.draw = function () {
         for (var i = 0, len = this._corals.length; i < len; i++) {
             var coral = this._corals[i];
@@ -339,6 +362,11 @@ function CoralCollection() {
     };
 }
 
+function cscore() {
+    var saveScore = localStorage.getItem("highScore");
+    hscore = saveScore;
+
+}
 //Required: Project has a listener for click events.
 
 //Required: At least the background, foreground, and playable character sprites are loaded and displayed on the canvas
