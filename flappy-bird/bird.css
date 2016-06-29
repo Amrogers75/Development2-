@@ -27,7 +27,7 @@ canvas {
     border-radius: 5px;
 }
 
-/*#titlesign{ width: 350px; height: 276px; background-image: url(img/); position: relative; left: -50%; top: 25px;}*/
+#titlesign{ width: 350px; height: 276px; background-image: url(img/amity.png); position: relative; left: -50%; top: 20px;}
 #container{position: absolute; left: 50%; z-index: 999;}
 #container2{position: absolute; left: 50%;}
 #container3{font-size: 45px; color: #d43f3a;}

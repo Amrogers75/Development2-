@@ -29,8 +29,8 @@ function initSprites(img) {
     
     foregroundSprite = new Sprite(img, 138, 0, 112, 56);
 
-    topCoralSprite = new Sprite(img, 251, 0, 26, 200);
-    bottomCoralSprite = new Sprite(img, 277, 0, 26, 200);
+    topCoralSprite = new Sprite(img, 277, 0, 26, 205);
+    bottomCoralSprite = new Sprite(img, 251, 0, 26, 205);
 
     textSprites = {
         floppyFish: new Sprite(img, 59, 114, 96, 22),
@@ -38,8 +38,8 @@ function initSprites(img) {
         getReady: new Sprite(img, 59, 155, 87, 22)
     };
 
-    topCoralSprite = new Sprite(img, 251, 0, 26, 200);
-    bottomCoralSprite = new Sprite(img, 277, 0, 26, 200);
+    topCoralSprite = new Sprite(img, 277, 0, 26, 205);
+    bottomCoralSprite = new Sprite(img, 251, 0, 26, 205);
 
 
     okButtonSprite = new Sprite(img, 119, 191, 40, 14);

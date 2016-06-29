@@ -110,7 +110,7 @@ function onpress(evt) {
 function loadGraphics() {
 
     var img = new Image();
-    img.src = "img/sheet1.png";
+    img.src = "img/sheet2.png";
     img.onload = function () {
         initSprites(this);
         renderingContext.fillStyle = backgroundSprite.color;
@@ -274,7 +274,7 @@ function Coral() {
         // intersection
         var cx = Math.min(Math.max(fish.x, this.x), this.x + this.width);
         var cy1 = Math.min(Math.max(fish.y, this.y), this.y + this.height);
-        var cy2 = Math.min(Math.max(fish.y, this.y + this.height + 110), this.y + 2 * this.height + 80);
+        var cy2 = Math.min(Math.max(fish.y, this.y + this.height + 112), this.y + 2 * this.height + 80);
 
         // Closest difference
         var dx = fish.x - cx;
@@ -294,7 +294,7 @@ function Coral() {
 
     this.draw = function () {
         bottomCoralSprite.draw(renderingContext, this.x, this.y);
-        topCoralSprite.draw(renderingContext, this.x, this.y + 110 + this.height);
+        topCoralSprite.draw(renderingContext, this.x, this.y + 112 + this.height);
     }
 }
 
