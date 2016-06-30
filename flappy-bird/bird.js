@@ -1,9 +1,7 @@
 /**
  * Created by anthonyrogers on 6/13/16.
  */
-// http://uxcobra.com/js/fishGame/
-//Required: Create a canvas element with the correct dimensions.
-// Global
+
 var fish;
 var corals;
 var currentState;
@@ -95,7 +93,7 @@ function onpress(evt) {
             if (okButton.x < mouseX && mouseX < okButton.x + okButton.width &&
                 okButton.y < mouseY && mouseY < okButton.y + okButton.height
             )
-//console.log('click');
+
             {
                 corals.reset();
                 currentState = states.Splash;
@@ -114,11 +112,7 @@ function loadGraphics() {
     img.onload = function () {
         initSprites(this);
         renderingContext.fillStyle = backgroundSprite.color;
-        //renderingContext.fillRect(0, 0, width, height);
-        //backgroundSprite.draw(renderingContext, 0, height - backgroundSprite.height);
-        //backgroundSprite.draw(renderingContext, backgroundSprite.width, height - backgroundSprite.height);
-        //fishSprite[0].draw(renderingContext, 5, 5, 142, 50);
-
+        
         okButton = {
             x: (width - okButtonSprite.width)/ 2,
 
@@ -140,9 +134,11 @@ function update() {
     document.getElementById("score").innerHTML = "score: " + score;
     document.getElementById("hscore").innerHTML = "high score: " + hscore;
     frames++;
-
+    
+// Move left two px each frame. Wrap every 14px.
     if (currentState !== states.Score) {
-        foregroundPosition = (foregroundPosition - 2) % 14; // Move left two px each frame. Wrap every 14px.
+        foregroundPosition = (foregroundPosition - 2) % 14; 
+        
     }
 
     if (currentState === states.Game) {
@@ -153,7 +149,7 @@ function update() {
 
 }
 
-// Draw anything additional ie trees, boats, ect...
+// Draw anything additional ie trees, boats, legs, ect...
 function render() {
 
     // Draw background color
@@ -205,7 +201,7 @@ function Fish() {
 
         if (currentState === states.Splash) {
             this.updateIdleFish();
-        } else { // Game state
+        } else {
             this.updatePlayingFish();
         }
     };
@@ -274,7 +270,7 @@ function Coral() {
         // intersection
         var cx = Math.min(Math.max(fish.x, this.x), this.x + this.width);
         var cy1 = Math.min(Math.max(fish.y, this.y), this.y + this.height);
-        var cy2 = Math.min(Math.max(fish.y, this.y + this.height + 112), this.y + 2 * this.height + 80);
+        var cy2 = Math.min(Math.max(fish.y, this.y + this.height + 111), this.y + 2 * this.height + 80);
 
         // Closest difference
         var dx = fish.x - cx;
@@ -294,7 +290,7 @@ function Coral() {
 
     this.draw = function () {
         bottomCoralSprite.draw(renderingContext, this.x, this.y);
-        topCoralSprite.draw(renderingContext, this.x, this.y + 112 + this.height);
+        topCoralSprite.draw(renderingContext, this.x, this.y + 111 + this.height);
     }
 }
 
@@ -309,28 +305,28 @@ function CoralCollection() {
         this._corals = [];
     };
 
-    //Creates and adds a new Coral to the game.
+    //Creates and adds a new legs to the game.
     this.add = function () {
         this._corals.push(new Coral()); // Create and push coral to array
     };
 
-    //Update the position of existing corals and add new corals when necessary.
+    //Update the position of existing legs and add new legs when necessary.
     this.update = function () {
 
-        // Add a new coral to the game every 100 frames.
-        if (frames % 100 === 0) {
+        // Add a new legs to the game every 100 frames.
+        if (frames % 95 === 0) {
             this.add();
         }
 
 
-        // Iterate through the array of corals and update each.
+        // Iterate through the array of legs and update each.
         for (var i = 0, len = this._corals.length; i < len; i++) {
             var coral = this._corals[i]; // The current coral.
 
-// If this is the leftmost coral, it is the only coral that the fish can collide with . . .
+// If this is the leftmost legs, it is the only coral that the fish can collide with
             if (i === 0) {
                 coral.detectCollision();
-                // . . . so, determine if the fish has collided with this leftmost coral.
+                // determine if the fish has collided with this leftmost coral.
             }
 
 // Each frame, move each coral two pixels to the left. Higher/lower values change the movement speed.
@@ -367,33 +363,3 @@ function cscore() {
     hscore = saveScore;
 
 }
-//Required: Project has a listener for click events.
-
-//Required: At least the background, foreground, and playable character sprites are loaded and displayed on the canvas
-
-//Required: Project has a game loop which requests animation frames from the canvas and renders the next frame to be displayed.
-
-//Required: Game has three states:
-// 1. splash screen, Clicking on the splash screen state starts the game state.
-// 2. game state, Hitting a pipe or the ground transitions from the game state to the score state.
-// 3. score state, Clicking the "OK" button transitions from the score state to the splash screen state.
-
-//Required: Render pipes to the screen that animate to the left as the game progresses.
-
-//Required: The game detects collisions between the playable character and the pipes, ending the game state and starting the score state if a collision occurs.
-
-//Required: The game detects collisions between the playable character and the ground, ending the game state and starting the high score state if a collision occurs.
-
-//Required: The game keeps track of the user's score. The score starts at 0 and increments by 1 each time the playable character passes a pipe.
-
-//Required: The score is displayed at the top of the screen while the user is playing the game.
-
-//Required: The game keeps track of the user's high score. This high score is stored in local storage and persists between reloads of the game page.
-
-//Required: The score and high score are displayed and labeled in the score state.
-
-//Required: The splash screen state displays "Click to start". Bonus point available if it displays "Tap to start" instead when the touch event is available.
-
-//Advanced: The game window resizes to fill the maximum available space on various sizes of screens.
-
-// Advanced: Users can select a difficulty level which increases or reduces the distance between the top and bottom pipe.

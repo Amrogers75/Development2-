@@ -48,3 +48,5 @@ function initSprites(img) {
     splashScreenSprite = new Sprite(img, 0, 114, 59, 49);
 
 }
+
+// Thanks to http://uxcobra.com/js/fishGame/ for helping
