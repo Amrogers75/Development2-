@@ -1,0 +1,39 @@
+h1{
+    color: #00008b;
+    text-align: center;
+
+}
+
+h2{
+    color: #800080;
+    text-align: center;
+
+}
+
+p{
+    color: darkblue;
+    text-align: center;
+}
+
+div{
+    text-align: center;
+    color: #dc143c;
+
+}
+a{
+    padding-left: 45%;
+    padding-right: 45%;
+    color: #fa8072;
+}
+
+form{
+    text-align: center;
+}
+
+
+/*body{*/
+    /*background-image: url(img/police-officer-flag.jpg);*/
+    /*background-size: auto;*/
+    /*background-repeat: repeat-x;*/
+
+/*}*/

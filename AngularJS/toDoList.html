@@ -29,11 +29,24 @@ Awesome: Use ngStorage to store all list data to local storage-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/toDoList.css">
     <title>To Do List</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="toDoList.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+
 </head>
-<body>
+
+<body ng-app="myApp">
+
+<ui-view></ui-view>
+
+<script src="toDoList.js"></script>
+<script src="task/task.js"></script>
+<script src="task1/task1.js"></script>
+<script src="about/about.js"></script>
+<!--<script src="services/tasks.service.js"></script>-->
+
 
 </body>
 </html>

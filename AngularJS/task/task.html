@@ -1,0 +1,19 @@
+
+<h1>Get It Done List</h1>
+
+<form ng-submit="$ctrl.todoAdd()">
+    <input type="text" ng-model="$ctrl.todoInput" size="80" placeholder="Add New">
+    <input type="submit" value="Add New">
+</form>
+
+<br>
+
+<div ng-repeat="x in $ctrl.todoList">
+    <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+</div>
+
+<p><button ng-click="$ctrl.remove()">Remove marked</button></p><br>
+
+<h4><a ui-sref="task1">Push it Back</a><br></h4>
+<br clear="both" />
+<h4><a ui-sref="about">About</a></h4>

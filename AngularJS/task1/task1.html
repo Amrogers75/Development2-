@@ -1,0 +1,17 @@
+<h1 ui-sref="main" class="clickable">Push it Back</h1>
+
+<form ng-submit="$ctrl.todoAdd()">
+    <input type="text" ng-model="$ctrl.todoInput" size="60" placeholder="Add New">
+    <input type="submit" value="Add New">
+</form>
+
+<br>
+
+<div ng-repeat="x in $ctrl.todoList">
+    <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+</div>
+
+<br clear="both" />
+<a ui-sref="about">About</a>
+
+<p><button ng-click="$ctrl.remove()">Remove marked</button></p>
