@@ -1,4 +1,5 @@
-<h1 ui-sref="main" class="clickable">Push it Back</h1>
+
+<h1 ui-sref="main" class="clickable">Buy it List</h1>
 
 <form ng-submit="$ctrl.todoAdd()">
     <input type="text" ng-model="$ctrl.todoInput" size="60" placeholder="Add New">
@@ -11,7 +12,23 @@
     <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
 </div>
 
+<p><button ng-click="$ctrl.remove()">Remove marked</button></p>
+
 <br clear="both" />
 <a ui-sref="about">About</a>
 
-<p><button ng-click="$ctrl.remove()">Remove marked</button></p>
+<!--<div ng-if="$ctrl">
+    <table>
+        <tr><th></th><td><div class="close-x" ng-click="$ctrl.close()">x</div></td></tr>
+
+    </table>
+</div>-->
+
+
+<!--
+<div ng-if="$ctrl.character">
+    <table>
+        <tr><th></th><td><div class="close-x" ng-click="$ctrl.close()">x</div></td></tr>
+        <tr><th>Name:</th><td>{{ $ctrl.character.name }}</td></tr>
+    </table>
+</div>-->
