@@ -1,0 +1,40 @@
+hr {
+    margin:40px 0;
+}
+h3 { color:#1758AA}
+h3 span {font-size:14px; display:block;}
+span[ng-click] {
+    cursor: pointer;
+}
+.summary {
+    top: 20px;
+}
+.icon {
+    float: left;
+    cursor: pointer;
+}
+.switchButton {
+    background-color: #E44D26;
+    height: 35px;
+    color: darkgray;
+    float: right;
+    right: 100px;
+    margin-top: 50px;
+    margin-right: 150px;
+    border-radius: 5px;
+}
+.buyNow {
+    float: right;
+    margin-top: 50px;
+    margin-right: 150px;
+    height: 125px;
+    width: 200px;
+    /*border: 1px solid darkgray;*/
+    /*border-radius: 5px;*/
+}
+.paypalImage {
+    height: 30px;
+    display: block;
+    position: center;
+    margin: 10px 29px 15px auto;
+}

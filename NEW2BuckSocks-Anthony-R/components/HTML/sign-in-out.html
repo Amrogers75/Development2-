@@ -1,0 +1,47 @@
+<div class="login-page">
+    <div class="row">
+        <div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
+            <img src="img/2bucklogo.png" class="user-avatar" />
+            <h1>2 Buck Socks <small>Single Sock Source</small></h1>
+            <!--<form role="form" ng-submit="submit()">-->
+
+                <!--<div class="form-content">-->
+                    <!--<div class="form-group">-->
+                        <!--<input type="text" class="form-control input-underline input-lg" id="" placeholder="Email">-->
+                    <!--</div>-->
+
+                    <!--<div class="form-group">-->
+                        <!--<input type="password" class="form-control input-underline input-lg" id="" placeholder="Password">-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--&lt;!&ndash;<button  type="submit" class="btn btn-white btn-outline btn-lg btn-rounded">Get Socks!!!!!</button>&ndash;&gt;-->
+
+            <!--</form>-->
+
+        </div>
+    </div>
+
+</div>
+
+<div>
+    <button ng-if="vm.displayName" class="raised" ng-click="vm.logout()">You are {{ vm.displayName }}</button>
+    <!--<button ng-if="!vm.displayName" class="raised primary" ng-click="vm.login('facebook')">Login with Facebook</button>-->
+    <button ng-if="!vm.displayName" class="raised primary" ng-click="vm.login('google')">Login with Google</button>
+    <button ng-if="!vm.displayName" class="raised primary" ng-click="vm.showEmailLogin()">Login with Email</button>
+</div>
+
+<md-content layout-padding ng-show="vm.showLogin">
+    <md-input-container>
+        <label>Email</label>
+        <input type="email" id="email" ng-model="vm.email" required>
+    </md-input-container>
+    <md-input-container>
+        <label for="password">Password</label>
+        <input type="password" id="password" ng-model="vm.password" required>
+    </md-input-container>
+    <md-input-container>
+        <md-button class="md-raised md-primary" ng-click="vm.loginWithEmail()">Login</md-button>
+    </md-input-container>
+</md-content>
+<!--ui-sref="store"-->
