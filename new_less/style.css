@@ -1,0 +1,41 @@
+#container a {
+  color: #1E8449;
+}
+#container span {
+  font-size: 30px;
+  color: firebrick;
+}
+#container .thecat {
+  font-size: 42px;
+  color: #1E8449;
+}
+.fish {
+  color: cornflowerblue;
+  margin: 25px auto;
+  border: solid;
+  width: 93%;
+  height: 305px;
+}
+.fish span {
+  font-size: 18px;
+}
+.bottompart {
+  width: 95%;
+  margin: 45px auto;
+}
+.bottompart .fullwidth {
+  background-color: aquamarine;
+  width: 100%;
+  margin-bottom: 18px;
+  height: 180px;
+}
+.bottompart .carousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.bottompart .carousel .smalldiv {
+  width: 65px;
+  color: olivedrab;
+  background-color: chartreuse;
+}
