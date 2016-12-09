@@ -1,0 +1,105 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#"><img class="branding" alt="Brand" src="img/2bucklogo.png"></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ng-if="vm.displayName" ui-sref="store">Store</a></li>
+                <!--<li><a ng-click="$ctrl.logout()" ng-if="!vm.displayName">Log Out</a></li>-->
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="text-center">
+        <img src="img/2bucklogo.png" alt="I am Sock">
+    </div>
+    <h1 class="text-center"> Your Single Sock Source <small>
+        <a href="http://gulpjs.com/"></a>
+        <a href="getbootstrap.com"></a>
+        <a href="http://lesscss.org/"></a></small></h1>
+    <div>
+
+        <h3>
+            About Us!
+        </h3>
+
+        <p>
+            Some people like socks.  Because they like socks, we sell socks.  Some people like socks too much, and they
+            ruin their socks... But only one sock... The right one... So because they ruin the right sock, we sell socks...
+            one at a time...  For a buck...  Other people lose socks, and blame it on their washer, dryer, dog, terrorists,
+            government or strange religion... but only one sock... the left one... And because they lose that sock... We sell
+            socks... One at a time... For a buck...  For those who belong to both of these groups... We still sell socks...
+            2 socks... for 2 bucks... Welcome to 2 buck socks!
+        </p>
+
+    </div>
+
+
+<!--<button ng-if="!vm.displayName" ui-sref="login" type="submit" class="btn btn-white btn-outline btn-lg btn-rounded">Login</button>-->
+<!--<button ng-if="vm.displayName" class="raised" ng-click="vm.logout()">Sign Out</button>-->
+
+    <div class="container text-center">
+        <button ng-if="vm.displayName" class="raised" ng-click="vm.logout()">Sign Out</button>
+        <button ng-if="!vm.displayName" class="raised primary" ng-click="vm.login('google')">Login with Google</button>
+        <button ng-if="!vm.displayName" class="raised primary" ng-click="vm.showEmailLogin()">Login with Email</button>
+    </div>
+
+
+
+    <form novalidate name="form" ng-show="vm.showLogin">
+        <div class="form-group" ng-class="{ 'has-error': form.password.$invalid && (form.$submitted || form.password.$touched) }">
+            <label for="password" class="col-sm-2 control-label">Password:</label>
+            <div class="col-sm-10">
+                <input id="password" name="password" class="form-control" type="text" ng-model="vm.password" required />
+                        <span class="help-block" ng-show="form.password.$invalid && (form.$submitted || form.password.$touched) ">
+                            Password is required.
+                        </span>
+            </div>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error': form.inputEmail.$invalid && (form.$submitted || form.inputEmail.$touched) }">
+            <label for="inputEmail" class="col-sm-2 control-label">Email:</label>
+            <div class="col-sm-10">
+                <input id="inputEmail" name="inputEmail" class="form-control" type="email" ng-model="vm.email" required />
+                        <span class="help-block" ng-show="form.inputEmail.$error.required && (form.$submitted || form.inputEmail.$touched) ">
+                            Email is required.
+                        </span>
+                        <span class="help-block" ng-show="form.inputEmail.$error.email && (form.$submitted || form.inputEmail.$touched) ">
+                            Email must be valid.
+                        </span>
+            </div>
+        </div>
+        <md-content layout-padding ng-show="vm.showLogin">
+            <!--<md-input-container>-->
+                <!--<label>Email</label>-->
+                <!--<input type="email" id="email" ng-model="vm.email" required>-->
+                <!--<span class="mainError">We need your email... </span>-->
+            <!--</md-input-container>-->
+            <!--<md-input-container>-->
+                <!--<label for="password">Password</label>-->
+                <!--<input type="password" id="password" ng-model="vm.password" required>-->
+                <!--<span class="mainError">Are you sure thats your password?...</span>-->
+            <!--</md-input-container>-->
+            <md-input-container>
+                <button class="raised primary" ng-click="vm.loginWithEmail()">Login</button>
+            </md-input-container>
+        </md-content>
+    </form>
+<ul class="list-group">
+    <!--<li ng-repeat="task in tasks" class="list-group-item">{{task}}</li>-->
+</ul>
+</div>
